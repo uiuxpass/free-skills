@@ -1,10 +1,23 @@
 {
   "name": "second-pass-free",
   "version": "2.2.2",
-  "description": "Two free design-review skills from Second Pass by UI/UX PASS: a heuristic and UX-copy review of screens and flows with measured color contrast, and a self-review that checks any deliverable against five questions and best-in-class work before you ship.",
-  "author": {"name": "UI/UX PASS", "url": "https://uiuxpass.com"},
+  "description": "Two free design-review skills from Second Pass by UI/UX Pass: a heuristic and UX-copy review of screens and flows with measured color contrast, and a self-review that checks any deliverable against five questions and best-in-class work before you ship.",
+  "author": {
+    "name": "UI/UX Pass",
+    "url": "https://uiuxpass.com"
+  },
   "homepage": "https://uiuxpass.com",
   "repository": "https://github.com/uiuxpass/second-pass-free",
   "license": "MIT",
-  "keywords": ["design", "design-review", "ux", "ux-writing", "heuristics", "accessibility", "contrast", "self-review", "product-design"]
+  "keywords": [
+    "design",
+    "design-review",
+    "ux",
+    "ux-writing",
+    "heuristics",
+    "accessibility",
+    "contrast",
+    "self-review",
+    "product-design"
+  ]
 }
