@@ -2,6 +2,8 @@
 
 Two free Claude skills from **Second Pass** by **UI/UX Pass**. They review screens, flows and any deliverable the way a meticulous senior designer would, with measured numbers instead of opinions.
 
+**Claude Design builds it. Second Pass checks it and fixes it.** Make the screen with Claude Design, Cursor or anything else; Second Pass measures what was made, fixes what fails and shows the score before and after.
+
 ![Claude skills that measure design quality. Checks passed: 38 → 66 of 66.](media/social-preview.png)
 
 | Skill | What it does | Try asking |
