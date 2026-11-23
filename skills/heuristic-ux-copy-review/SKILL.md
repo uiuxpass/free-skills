@@ -110,9 +110,9 @@ Don't score what you can't observe: write "Not enough data".
 - [ ] Contrast numbers are measured.
 - [ ] Method limitations section is present.
 
-## Deliver it the Second Pass way
+## Deliver it the UI/UX Pass way
 
-Apply this to every result from this skill, even when `second-pass-workflow` and `self-review` are not loaded. Keep it proportionate: one line per part for a quick answer.
+Apply this to every result from this skill, even when `uiuxpass-workflow` and `self-review` are not loaded. Keep it proportionate: one line per part for a quick answer.
 
 1. **Result first.** Open with one or two sentences: what the user gets, in what form, and how it was measured or checked.
 2. **Five parts, briefly:** Goal · Success criteria · What the best do (name one or two best-in-class examples and where this result falls short of them) · Fixed constraints (what you kept from the user's inputs and brand) · Result.
