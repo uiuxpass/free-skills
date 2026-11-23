@@ -1,6 +1,6 @@
 ---
 name: self-review
-description: One review standard for every deliverable (interfaces, reports, decks, docs, reviews): five universal questions, a side-by-side check against best-in-class work, type-specific checks, three review layers (automated, self, blind) and a script that checks the delivery format. Use this before handing any design, product or writing result to the user, and whenever the user asks 'is this good enough' or to check work before sending.
+description: "One review standard for every deliverable (interfaces, reports, decks, docs, reviews): five universal questions, a side-by-side check against best-in-class work, type-specific checks, three review layers (automated, self, blind) and a script that checks the delivery format. Use this before handing any design, product or writing result to the user, and whenever the user asks 'is this good enough' or to check work before sending."
 ---
 
 # Self-review
@@ -59,10 +59,68 @@ Play the real recipient and look once. Name the role (executive, product manager
 
 ## 6. Format checker
 
-Write the draft to a file and run it before sending:
+Before sending, save the draft as `draft.md`, save the script below as `check_format.py` in the same working folder (not in the user's project), and run:
 
-`python3 -I scripts/check_format.py draft.md` (lookups and confirmations: add `--short`)
+`python3 -I check_format.py draft.md` (lookups and confirmations: add `--short`)
 
-It checks: all five parts (short form: Goal · Result · Self-review); a review table; a side-by-side row; a pros/cons table when a decision is requested; no "4/7 items" shorthand; no "guaranteed" or "100%" unless something is marked "not checked".
+It checks: all five parts (short form: Goal · Result · Self-review); a review table; a side-by-side row; a pros/cons table when a decision is requested; no "4/7 items" shorthand; no "guaranteed" or "100%" unless something is marked "not checked". It only reads the draft and prints what is missing.
 
-To add a check for a mistake of your own: open `scripts/check_format.py` and add one line to the `checks` list.
+To add a check for a mistake of your own: add one line to the `checks` list.
+
+```python
+#!/usr/bin/env python3
+"""Second Pass format checker for messages, files and recommendations.
+Usage: python3 -I check_format.py <draft.md> [--short]
+--short: lookups and "done" confirmations. Only counts, never edits."""
+import re
+import sys
+
+if len(sys.argv) < 2:
+    print(__doc__)
+    sys.exit(2)
+
+t = open(sys.argv[1], encoding='utf-8').read()
+short = '--short' in sys.argv
+
+
+def has(p):
+    return re.search(p, t, re.I | re.M) is not None
+
+
+review_table = has(r'^\|.*\|\s*(Pass|Partial|Fail|Not checked)\s*\|')
+asks_decision = has(r'(need|want) you to (decide|choose|pick)|Which (option|one) (do|would) you .*\?\s*$')
+
+if short:
+    checks = [
+        ('Goal', has(r'\*\*Goal:?\*\*|^Goal:')),
+        ('Result', has(r'\*\*Result')),
+        ('Self-review', has(r'Self-review') or review_table),
+    ]
+else:
+    checks = [
+        ('Goal', has(r'\*\*Goal:?\*\*|^Goal:')),
+        ('Success criteria', has(r'Success criteria')),
+        ('What the best are doing', has(r'What the best|best-in-class')),
+        ('Fixed constraints', has(r'Fixed constraints|locked')),
+        ('Result', has(r'\*\*Result')),
+        ('Review table (Pass / Partial / Fail)', review_table),
+        ('Side-by-side row', has(r'^\|.*Side-by-side')),
+    ]
+
+if asks_decision:
+    checks.append(('Pros/cons table for the decision', has(r'^\|.*Pros.*\|.*Cons.*\|')))
+
+robotic = re.findall(
+    r'(?<![/\d])\d+/\d+(?![/\d])(?= ?(?:items?|criteria|questions?|rows?|issues?|steps?|tasks?|pages?))', t, re.I)
+checks.append(('No robotic "4/7 items" shorthand', not robotic))
+
+overclaim = re.findall(r'guarantee[sd]?|100 ?%|definitely works|fully compliant', t, re.I)
+checks.append(('No overclaiming without evidence', not overclaim or has(r'Not checked|not sure|unverified')))
+
+passed = sum(ok for _, ok in checks)
+print(f"Passed {passed} of {len(checks)} format checks" + (" (short form)" if short else ""))
+for name, ok in checks:
+    if not ok:
+        print('- Missing: ' + name + (f" ({', '.join(robotic[:3])})" if 'robotic' in name else ''))
+sys.exit(0 if passed == len(checks) else 1)
+```
