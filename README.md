@@ -1,6 +1,6 @@
 # Second Pass (free): design review skills that measure, not guess
 
-Two free Claude skills from **Second Pass** by **UI/UX PASS**. They review screens, flows and any deliverable the way a meticulous senior designer would, with measured numbers instead of opinions.
+Two free Claude skills from **Second Pass** by **UI/UX Pass**. They review screens, flows and any deliverable the way a meticulous senior designer would, with measured numbers instead of opinions.
 
 ![Claude skills that measure design quality. Checks passed: 38 → 66 of 66.](media/social-preview.png)
 
@@ -36,4 +36,4 @@ These are 2 of the 40 skills in Second Pass. The full kit adds a 66-check interf
 
 ## License
 
-MIT for the two skills in this repository. Second Pass and UI/UX PASS are independent products, not affiliated with or endorsed by Anthropic. Claude is a trademark of Anthropic.
+MIT for the two skills in this repository. Second Pass and UI/UX Pass are independent products, not affiliated with or endorsed by Anthropic. Claude is a trademark of Anthropic.
