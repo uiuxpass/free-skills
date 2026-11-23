@@ -33,7 +33,7 @@ Play the real recipient and look once. Name the role (executive, product manager
 | Web pages, data reports | The `interface-polish` checker; every number matches its source. |
 | Decks, brochures | No text overflow, readable type size, one clear idea per screen. |
 | Docs, articles | `product-writing`; questions 2 and 4 matter most. |
-| Reviews, audits | Section 6 of `second-pass-workflow`. |
+| Reviews, audits | Section 6 of `uiuxpass-workflow`. |
 | Applications with an official rubric | Use that rubric exactly, with a projected score table: "As is" vs "After fixing high-priority items". |
 
 ## 3. Three review layers
@@ -69,7 +69,7 @@ To add a check for a mistake of your own: add one line to the `checks` list.
 
 ```python
 #!/usr/bin/env python3
-"""Second Pass format checker for messages, files and recommendations.
+"""UI/UX Pass format checker for messages, files and recommendations.
 Usage: python3 -I check_format.py <draft.md> [--short]
 --short: lookups and "done" confirmations. Only counts, never edits."""
 import re
