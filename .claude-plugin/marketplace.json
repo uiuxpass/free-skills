@@ -1,6 +1,9 @@
 {
   "name": "uiuxpass",
-  "owner": {"name": "UI/UX PASS", "url": "https://uiuxpass.com"},
+  "owner": {
+    "name": "UI/UX Pass",
+    "url": "https://uiuxpass.com"
+  },
   "plugins": [
     {
       "name": "second-pass-free",
