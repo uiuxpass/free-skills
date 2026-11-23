@@ -6,9 +6,9 @@
   },
   "plugins": [
     {
-      "name": "second-pass-free",
+      "name": "uiuxpass-free",
       "source": "./",
-      "description": "Two free design-review skills from Second Pass: heuristic and UX-copy review with measured contrast, and a pre-ship self-review."
+      "description": "Two free design-review skills from UI/UX Pass: heuristic and UX-copy review with measured contrast, and a pre-ship self-review."
     }
   ]
 }
