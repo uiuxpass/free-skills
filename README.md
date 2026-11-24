@@ -13,7 +13,9 @@ Two free Claude skills from **UI/UX Pass**. They review screens, flows and any d
 
 ## Install
 
-**Claude.ai (Pro, Max, Team, Enterprise):** download this repository as a ZIP, then in Claude open Customize → Plugins → Add and upload it. Or add it from the Claude directory once it is listed.
+**Claude.ai (Pro, Max, Team, Enterprise):** download this repository as a ZIP, then in Claude open **Plugins** in the sidebar and upload it. Or add it from the Claude directory once it is listed. In any chat, type **/** or click **+** to call a skill by name.
+
+**Team or Enterprise plan?** Ask your admin to keep **Skills** and **Code execution and file creation** turned on in admin settings. From November 30, 2026, plugins stop working in Claude Desktop, Cowork and Claude Code when Skills is off for your organization.
 
 **Claude Code:**
 
@@ -31,7 +33,7 @@ Check it works: ask *"Review this screen for UX and copy"* with a screenshot. Yo
 
 ## Want the measured version of everything?
 
-These are 2 of the 40 skills in UI/UX Pass. The full kit adds a 66-check interface checker that runs in a real browser and fixes what it finds, a WCAG 2.2 AA audit, design-token checks, pixel-diff design QA, usability-test and A/B-test statistics, specs, decks, brochures and more.
+These are 2 of the 45 skills in UI/UX Pass. The full kit adds a 66-check interface checker that runs in a real browser and fixes what it finds, a WCAG 2.2 AA audit, design-token checks, pixel-diff design QA, usability-test and A/B-test statistics, specs, decks, brochures, an AI output eval kit that scores what agents produce, and more.
 
 - **Free in-browser checker:** paste any page and get 16 measured checks in 30 seconds at [uiuxpass.com/check.html](https://uiuxpass.com/check.html)
 - **Full kit:** [uiuxpass.com](https://uiuxpass.com), $49 once, lifetime updates
